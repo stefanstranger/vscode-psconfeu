@@ -34,3 +34,7 @@ There are no know issues at the moment.
 ### 1.0.0
 
 Initial release of PSConfEU VSCode extension.
+
+### 1.0.1
+
+Added color to applied filter.
