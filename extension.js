@@ -84,8 +84,14 @@ function filterAgendaLoaded(error, response, body) {
                 {}
             );
 
-            // And set its HTML content
-            panel.webview.html = json2html.transform(newArray, transform);
+            // And set its HTML content and filter color blue
+            var html = json2html.transform(newArray, transform);
+            var find = filter;
+            var re = new RegExp(find, 'gi');
+            var blue = "<span style=\"background-color: #0000ff;\">" + filter + "</span>"
+            var res = html.replace(re, blue)
+
+            panel.webview.html = res
         })
 }
 
