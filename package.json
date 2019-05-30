@@ -1,0 +1,80 @@
+{
+    "name": "vscode-psconfeu",
+    "displayName": "vscode-psconfeu",
+    "description": "\"PowerShell Conference Europe Agenda\"",
+    "version": "0.0.1",
+    "publisher": "stefanstranger",
+    "engines": {
+        "vscode": "^1.34.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stefanstranger/vscode-psconfeu"
+    },
+    "homepage": "https://github.com/stefanstranger/vscode-psconfeu/master/README.md",
+    "bugs": {
+        "url": "https://github.com/stefanstranger/vscode-psconfeu/issues"
+    },
+    "icon": "icon.png",
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "PowerShell",
+        "Agenda",
+        "communication",
+        "collaboration"
+    ],
+    "activationEvents": [
+        "onCommand:extension.getPSConfEUAgenda",
+        "onCommand:extension.filterPSConfEUAgenda",
+        "onCommand:extension.toDaysPSConfEUAgenda"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.getPSConfEUAgenda",
+                "title": "PSConfEU: Get Agenda"
+            },
+            {
+                "command": "extension.filterPSConfEUAgenda",
+                "title": "PSConfEU: Filter Agenda"
+            },
+            {
+                "command": "extension.toDaysPSConfEUAgenda",
+                "title": "PSConfEU: ToDay's Agenda"
+            }
+        ]
+    },
+    "keybindings": [
+        {
+            "command": "extension.getPSConfEUAgenda",
+            "key": "ctrl+alt+a"
+        },
+        {
+            "command": "extension.filterPSConfEUAgenda",
+            "key": "ctrl+alt+f"
+        },
+        {
+            "command": "extension.toDaysPSConfEUAgenda",
+            "key": "ctrl+alt+t"
+        }
+    ],
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "dependencies": {
+        "node-json2html": "^1.2.0",
+        "request": "^2.81.0"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42",
+        "@types/request": "^0.0.42"
+    }
+}
