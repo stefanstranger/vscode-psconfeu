@@ -16,7 +16,7 @@ var transform = {
         { "<>": "li", "html": "Starts: ${Starts}" },
         { "<>": "li", "html": "Ends ${Ends}" },
         { "<>": "li", "html": "Track: ${Track}" },
-        { "<>": "li", "html": "Twitter: ${Twitter}" },
+        { "<>": "li", "html": "Twitter: <a href=\"https://twitter.com/${Twitter}\" target=\"_blank\" rel=\"noopener\">${Twitter}</a>" },
     ]
 }
 
@@ -26,7 +26,7 @@ var yyyy = (new Date().getFullYear().toString());
 
 var toDay = mm + '/' + dd + '/' + yyyy;
 
-// Load PSConfEU Agenda from 'http://www.psconf.eu/AllSessions.json'
+// Load PSConfEU Agenda from 'https://raw.githubusercontent.com/psconfeu/2019/master/sessions.json'
 function loadAgenda(uri) {
     options = {
         url: uri,
@@ -86,7 +86,7 @@ function filterAgendaLoaded(error, response, body) {
 
             // And set its HTML content and filter color blue
             var html = json2html.transform(newArray, transform);
-            var find = filter;
+            var find = "(?<!twitter.com/[a-z]*[0-9]*)" + filter;
             var re = new RegExp(find, 'gi');
             var blue = "<span style=\"background-color: #0000ff;\">" + filter + "</span>"
             var res = html.replace(re, blue)

@@ -37,4 +37,8 @@ Initial release of PSConfEU VSCode extension.
 
 ### 1.0.1
 
-Added color to applied filter.
+Added color highlighting to applied filter.
+
+### 1.0.2
+
+Added hyperlinking for Twitter handles.
