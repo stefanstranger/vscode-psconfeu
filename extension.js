@@ -90,7 +90,7 @@ function filterAgendaLoaded(error, response, body) {
             var re = new RegExp(find, 'gi');
             var blue = "<span style=\"background-color: #0000ff;\">" + filter + "</span>"
             var res = html.replace(re, blue)
-
+            // var result = ("<body bgcolor=\"#1e1e1e\">").concat(res).concat("\\<body>")
             panel.webview.html = res
         })
 }
