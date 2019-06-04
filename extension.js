@@ -19,10 +19,10 @@ var transform = {
         { "<>": "li", "html": "Twitter: <a href=\"https://twitter.com/${Twitter}\" target=\"_blank\" rel=\"noopener\">${Twitter}</a>" },
     ]
 }
-
-var dd = (new Date().getDate()).toString().padStart(2, '0')
-var mm = (new Date().getMonth()).toString().padStart(2, '0')
-var yyyy = (new Date().getFullYear().toString());
+var d = new Date()
+var dd = (d.getDate()).toString().padStart(2, '0')
+var mm = (d.getMonth() + 1).toString().padStart(2, '0')
+var yyyy = (d.getFullYear().toString());
 
 var toDay = mm + '/' + dd + '/' + yyyy;
 
