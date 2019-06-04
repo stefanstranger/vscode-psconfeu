@@ -42,3 +42,7 @@ Added color highlighting to applied filter.
 ### 1.0.2
 
 Added hyperlinking for Twitter handles.
+
+### 1.0.3
+
+Fixed current month issue with todays agenda filter.
